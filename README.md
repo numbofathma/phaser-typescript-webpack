@@ -43,7 +43,7 @@ This will run a server so you can run the game in a browser.
 
 Open your browser and enter localhost:8000 into the address bar.
 
-As you change your code, Webpack will watch for changes and the browser will refresh
+As you change your code, Webpack will watch for changes and the browser will refresh.
 
 
 ## 5. Build for deployment:
@@ -71,4 +71,7 @@ https://github.com/eduardonunesp/phaser-typescript-webpack-boilerplate<br />
 https://github.com/heathkit/phaser-typescript-webpack-starter/tree/master/src/sprites
 
 Special thanks to:
-<a href="https://github.com/dimorphic/" target="_blank" title="dimorphic's Profile">dimorphic</a> 
+<a href="https://github.com/dimorphic/" target="_blank" title="dimorphic's Profile">dimorphic</a>
+
+<br />
+Made with <3 in Romania 
