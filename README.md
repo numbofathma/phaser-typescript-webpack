@@ -66,9 +66,9 @@ Run:
 ## Credits
 Big thanks to this great repos:
 
-https://github.com/heathkit/phaser-typescript-webpack-starter/tree/master/src/sprites
 https://github.com/lean/phaser-es6-webpack/tree/typescript
-h§ttps://github.com/eduardonunesp/phaser-typescript-webpack-boilerplate
+https://github.com/eduardonunesp/phaser-typescript-webpack-boilerplate
+https://github.com/heathkit/phaser-typescript-webpack-starter/tree/master/src/sprites
 
 Special thanks to:
 <a href="https://github.com/dimorphic/" target="_blank" title="dimorphic's Profile">dimorphic</a> 
