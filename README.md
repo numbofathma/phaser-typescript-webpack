@@ -65,6 +65,7 @@ Run:
 
 ## Credits
 Big thanks to this great repos:
+
 https://github.com/heathkit/phaser-typescript-webpack-starter/tree/master/src/sprites
 https://github.com/lean/phaser-es6-webpack/tree/typescript
 https://github.com/eduardonunesp/phaser-typescript-webpack-boilerplate
