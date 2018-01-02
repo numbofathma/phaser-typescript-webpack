@@ -2,9 +2,9 @@
 #### A bootstrap project to create games with Phaser.io, Howler.js, TypeScript and Webpack.
 
 ## Features
-- Uses the lastest Phaser CE 
+- Uses the latest Phaser CE 
 - Uses Howler (an awesome audio library) - can be easily removed if one does not use it
-- TypeScript Linter that checks TypeScript code for readability, maintainability, and functionality errors
+- TypeScript linter that checks TypeScript code for readability, maintainability, and functionality errors
 - Webpack ready
 - Built-in commands to easily deploy code your code (minify, uglify, comments removal, etc)
 - Other awesome stuff!
