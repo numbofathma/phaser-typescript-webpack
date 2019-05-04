@@ -1,11 +1,11 @@
-# Phaser.io CE 2.9.4, Howler.js 2.0.7, TypeScript and Webpack 3.10.0, play nice together.
+# Phaser.io CE 2.12.0, Howler.js 2.1.2, TypeScript and Webpack 4.3, play nice together.
 #### A bootstrap project to create games with Phaser.io, Howler.js, TypeScript and Webpack.
 
 ## Features
 - Uses the latest Phaser CE 
 - Uses Howler (an awesome audio library) - can be easily removed if one does not use it
 - TypeScript linter that checks TypeScript code for readability, maintainability, and functionality errors
-- Webpack ready
+- Webpack 4 ready
 - Built-in commands to easily deploy code your code (minify, uglify, comments removal, etc)
 - Other awesome stuff!
 

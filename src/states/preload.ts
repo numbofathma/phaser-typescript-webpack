@@ -1,6 +1,7 @@
 import 'pixi';
 import 'p2';
 import Phaser from 'phaser-ce';
+
 import { Sound } from '../helpers/sound';
 
 export class Preload extends Phaser.State {

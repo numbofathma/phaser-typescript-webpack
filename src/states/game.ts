@@ -1,12 +1,8 @@
-import 'pixi';
-import 'p2';
-import Phaser from 'phaser-ce';
-
 import {Sound} from '../helpers/sound';
 import {Mushroom} from '../prefabs/mushroom';
 
 export class Game extends Phaser.State {
-    private mushroom: Phaser.Sprite;
+    private mushroom: Mushroom;
     private cursors: Phaser.CursorKeys;
     private text: Phaser.BitmapText;
     private spaceKey: Phaser.Key;
