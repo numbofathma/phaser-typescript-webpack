@@ -1,5 +1,3 @@
-const Phaser = require('phaser-ce/build/custom/phaser-arcade-physics');
-
 export class Mushroom extends Phaser.Sprite {
     constructor(game: Phaser.Game, x: number, y: number) {
         super(game, x, y, 'mushroom');

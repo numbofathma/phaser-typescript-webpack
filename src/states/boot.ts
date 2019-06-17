@@ -1,7 +1,3 @@
-import 'pixi';
-import 'p2';
-import Phaser from 'phaser-ce';
-
 export class Boot extends Phaser.State {
     public create(): void {
         // set up input max pointers

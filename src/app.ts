@@ -1,6 +1,6 @@
-const PIXI = require('phaser-ce/build/custom/pixi');
-const p2 = require('phaser-ce/build/custom/p2');
-const Phaser = require('phaser-ce/build/custom/phaser-arcade-physics');
+import 'pixi';
+import 'p2';
+import 'phaser';
 
 import {Config} from './config';
 
