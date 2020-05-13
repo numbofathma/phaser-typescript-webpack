@@ -1,4 +1,4 @@
-# Phaser.io CE 2.12.0, Howler.js 2.1.2, TypeScript and Webpack 4.3, play nice together.
+# Phaser.io CE 2.15.0, Howler.js 2.1.3, TypeScript and Webpack 4.43, play nice together.
 #### A bootstrap project to create games with Phaser.io, Howler.js, TypeScript and Webpack.
 
 ## Features
@@ -56,12 +56,18 @@ This will optimize and minimize the compiled bundle. Your code will be minified 
 The vendor library will only be minified because uglify will add extra MBs to your game.
 
 
-## 6. Extra feature (fix your TS code)
-I've also added a command that auto-fixes your TS code according to the rules in the tslint.json file.
+## 6. Extra features
+I've also added a command that auto-fixes your code according to the rules in the .eslintrc.json file.
 
 Run:
 
 ``` npm run lint:fix```
+
+...and also a commad to check your TypeScript types.
+
+Run:
+
+``` npm run check-types```
 
 ## Credits
 Big thanks to this great repos:
