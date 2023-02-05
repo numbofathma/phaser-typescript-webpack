@@ -2,14 +2,13 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const JavaScriptObfuscator = require('webpack-obfuscator');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const phaserModule = path.join(__dirname, '/node_modules/phaser-ce/');
 const phaser = path.join(phaserModule, 'build/custom/phaser-arcade-physics.js');
 const pixi = path.join(phaserModule, 'build/custom/pixi.js');
 const p2 = path.join(phaserModule, 'build/custom/p2.js');
-const howler = path.join(__dirname, '/node_modules/howler/dist/howler.min.js');
 
 module.exports = {
   entry: {
@@ -20,13 +19,17 @@ module.exports = {
     path: path.resolve('./dist'),
     publicPath: '/'
   },
+  mode: 'production',
+  devtool: false,
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: './assets',
-        to: './assets'
-      }
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './assets', to: './assets' },
+      ],
+      options: {
+        concurrency: 100,
+      },
+    }),
     new JavaScriptObfuscator({
       rotateUnicodeArray: true
     }, ['vendor.bundle.js']),
@@ -35,28 +38,70 @@ module.exports = {
       inject: 'body',
     })
   ],
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   optimization: {
     splitChunks: {
+      minSize: 10000,
+      maxSize: 250000,
       cacheGroups: {
         vendor: {
           test: /node_modules/,
-          chunks: "initial",
-          name: "vendor",
+          chunks: 'initial',
+          name: 'vendor',
           priority: 10,
           enforce: true
         }
       }
     },
-    minimizer: [new UglifyJsPlugin()],
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        terserOptions: {
+          // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
+        },
+      }),
+    ],
   },
   module: {
     rules: [
-      { test: /\.ts?$/, loader: 'ts-loader', exclude: '/node_modules/' },
-      { test: /\.js?$/, loader: 'eslint-loader', exclude: '/node_modules/' },
-      { test: /pixi\.js/, loader: 'expose-loader?PIXI' },
-      { test: /phaser-arcade-physics\.js/, loader: 'expose-loader?Phaser' },
-      { test: /howler\.min\.js/, loader: 'expose-loader?Howler' },
-      { test: /p2\.js$/, loader: 'expose-loader?p2' }
+      {
+        test: /\.(j|t)s$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
+        test: /pixi\.js/,
+        use: {
+          loader: 'expose-loader',
+          options: {
+            exposes: ['PIXI', pixi]
+          }
+        }
+      },
+      {
+        test: /phaser-arcade-physics\.js/,
+        use: {
+          loader: 'expose-loader',
+          options: {
+            exposes: ['Phaser', phaser]
+          }
+        }
+      },
+      {
+        test: /p2\.js$/,
+        use: {
+          loader: 'expose-loader',
+          options: {
+            exposes: ['p2', p2]
+          }
+        }
+      }
     ]
   },
   resolve: {
@@ -65,7 +110,6 @@ module.exports = {
       'phaser-ce': phaser,
       'pixi': pixi,
       'p2': p2,
-      'howler': howler
     }
   }
 };

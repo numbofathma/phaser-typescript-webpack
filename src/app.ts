@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-unresolved */
 import 'pixi';
 import 'p2';
 import Phaser from 'phaser-ce';
@@ -21,7 +21,4 @@ class Template extends Phaser.Game {
   }
 }
 
-window.onload = () => {
-  // eslint-disable-next-line no-new
-  new Template();
-};
+window.onload = () => new Template();
