@@ -12,7 +12,11 @@ const p2 = path.join(phaserModule, 'build/custom/p2.js');
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, 'src/app.ts')
+    app: [
+      path.resolve(pixi),
+      path.resolve(p2),
+      path.resolve(__dirname, 'src/app.ts'),
+    ]
   },
   output: {
     filename: '[name].bundle.js',
@@ -85,6 +89,15 @@ module.exports = {
         }
       },
       {
+        test: /p2\.js$/,
+        use: {
+          loader: 'expose-loader',
+          options: {
+            exposes: ['p2', p2]
+          }
+        }
+      },
+      {
         test: /phaser-arcade-physics\.js/,
         use: {
           loader: 'expose-loader',
@@ -93,15 +106,6 @@ module.exports = {
           }
         }
       },
-      {
-        test: /p2\.js$/,
-        use: {
-          loader: 'expose-loader',
-          options: {
-            exposes: ['p2', p2]
-          }
-        }
-      }
     ]
   },
   resolve: {

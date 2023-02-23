@@ -1,6 +1,3 @@
-/* eslint-disable import/no-unresolved */
-import 'pixi';
-import 'p2';
 import Phaser from 'phaser-ce';
 
 import { Config } from './config';
@@ -11,7 +8,16 @@ import { Game } from './states/game';
 
 class Template extends Phaser.Game {
   constructor() {
-    super(Config.gameWidth, Config.gameHeight, Phaser.CANVAS, 'content', null);
+    const config = {
+      width: Config.gameWidth,
+      height: Config.gameHeight,
+      renderer: Config.renderer,
+      parent: 'content',
+      state: null,
+      enableDebug: Config.enableDebug,
+    };
+
+    super(config);
 
     this.state.add('Boot', Boot, false);
     this.state.add('Preload', Preload, false);
