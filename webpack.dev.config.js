@@ -21,7 +21,9 @@ module.exports = {
   },
   entry: {
     app: [
-      path.resolve(__dirname, 'src/app.ts')
+      path.resolve(pixi),
+      path.resolve(p2),
+      path.resolve(__dirname, 'src/app.ts'),
     ]
   },
   output: {
@@ -57,6 +59,15 @@ module.exports = {
         }
       },
       {
+        test: /p2\.js$/,
+        use: {
+          loader: 'expose-loader',
+          options: {
+            exposes: ['p2', p2]
+          }
+        }
+      },
+      {
         test: /phaser-arcade-physics\.js/,
         use: {
           loader: 'expose-loader',
@@ -65,15 +76,6 @@ module.exports = {
           }
         }
       },
-      {
-        test: /p2\.js$/,
-        use: {
-          loader: 'expose-loader',
-          options: {
-            exposes: ['p2', p2]
-          }
-        }
-      }
     ]
   },
   resolve: {
