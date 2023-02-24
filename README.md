@@ -1,5 +1,5 @@
 # Phaser.io CE 2.20.0, Howler.js 2.2.3, TypeScript and Webpack 5.75, play nice together.
-#### A bootstrap project to create games with Phaser.io, Howler.js, TypeScript and Webpack.
+#### A boilerplate project to create games with Phaser.io, Howler.js, TypeScript and Webpack.
 
 ## Features
 - Uses the latest Phaser CE 
@@ -10,7 +10,7 @@
 - Other awesome stuff!
 
 # Setup
-To use this bootstrap you’ll need to install a few things before you have a working copy of the project.
+To use this boilerplate you’ll need to install a few things before you have a working copy of the project.
 
 ## 1. Clone this repo:
 
@@ -67,7 +67,7 @@ Run:
 
 Run:
 
-``` npm run check-types```
+``` npm run check```
 
 ## Credits
 Big thanks to this great repos:
