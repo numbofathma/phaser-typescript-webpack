@@ -1,4 +1,4 @@
-# Phaser.io CE 2.20.0, Howler.js 2.2.3, TypeScript and Webpack 5.75, play nice together.
+# Phaser.io CE 2.20.0, Howler.js 2.2.4, TypeScript 5.4.2 and Webpack 5.90, play nice together.
 #### A boilerplate project to create games with Phaser.io, Howler.js, TypeScript and Webpack.
 
 ## Features
